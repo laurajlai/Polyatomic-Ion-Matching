@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel = "stylesheet prefetch" href = "https://fonts.googleapis.com/css?family=Titillium+Web">
+  </head>
+  <BODY BGCOLOR = "#DEF3BD">
+  <body>
+    <header>
+    <h1>Polyatomic Ion Matching Game</h1>
+    </header>
+<p>
+Group 1 elements form 1+ ions. 
+</p>
+<p>
+Group 2 elements form 2+ ions. 
+</p>
+<p>
+Transition metals can have multiple charges
+</p>
+<p>
+Group 13 elements form 3+ ions.
+</p>
+<p>
+N and P from Group 15 form 3- anions (nitrides and phosphides).
+</p>
+<p>
+O, S, and Se from Group 16 form 2- anions (oxides, sulfides, and selenides).
+</p>
+<p>
+Group 17 elements form 1- ions.
+</p>
+</p>
+ <section class="score-panel">
+<center>
+        	<ul class="stars">
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        	</ul>
+        	<span class="moves"><font size="5">0</font></span><font size="5"> Move(s)</font>
+          <div class="timer">
+          </div>
+          <div class="restart" onclick=startGame()>
+          <i class="fa fa-repeat"></i>
+        	</div>
+</center>
+  </section>
+  
+<ul class = "deck" id = "card-deck">
+
+<li class = "card" id = "ab">
+  NH<sub>4</sub>&nbsp;<sup>+</sup>
+</li>
+<li class = "card" type = "b"> 
+  C<sub>2</sub>H<sub>3</sub>O<sub>2</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "c"> 
+  AsO<sub>4</sub>&nbsp;<sup>3-</sup>
+</li>
+<li class = "card" type = "e"> 
+  N<sub>3</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "g"> 
+  BO<sub>3</sub>&nbsp;<sup>3-</sup>
+</li>
+<li class = "card" type = "h"> 
+  BrO<sub>3</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "ha"> 
+  C<sub>6</sub>H<sub>5</sub>O<sub>7</sub>&nbsp;<sup>3-</sup>
+</li>
+<li class = "card" type = "j"> 
+  CO<sub>3</sub>&nbsp;<sup>2-</sup>
+</li>
+<li class = "card" type = "k"> 
+  ClO<sub>3</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "l"> 
+  ClO<sub>2</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "m"> 
+  CrO<sub>4</sub>&nbsp;<sup>2-</sup>
+</li>
+<li class = "card" type = "n"> 
+  CNO<sup>-</sup>
+</li>
+<li class = "card" type = "o"> 
+  CN<sup>-</sup>
+</li>
+<li class = "card" type = "cz"> 
+  Hg<sub>2</sub>&nbsp;<sup>2+</sup>
+</li>
+<li class = "card" type = "p"> 
+  Cr<sub>2</sub>O<sub>7</sub>&nbsp;<sup>2-</sup>
+</li>
+<li class = "card" type = "q"> 
+  HCO<sub>3</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "r"> 
+  HSO<sub>4</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "ra"> 
+  H<sub>3</sub>O<sup>+</sup>
+</li>
+<li class = "card" type = "s"> 
+  OH<sup>-</sup>
+</li>
+<li class = "card" type = "t"> 
+  ClO<sup>-</sup>
+</li>
+<li class = "card" type = "u"> 
+  IO<sub>3</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "v"> 
+  NO<sub>3</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "w"> 
+  NO<sub>2</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "x"> 
+  C<sub>2</sub>O<sub>4</sub>&nbsp;<sup>2-</sup>
+</li>
+<li class = "card" type = "y"> 
+  ClO<sub>4</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "ya"> 
+  IO<sub>4</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "yb"> 
+  MnO<sub>4</sub>&nbsp;<sup>-</sup>
+</li>
+<li class = "card" type = "yc"> 
+  O<sub>2</sub>&nbsp;<sup>2-</sup>
+</li>
+<li class = "card" type = "yd"> 
+  PO<sub>4</sub>&nbsp;<sup>3-</sup>
+</li>
+<li class = "card" type = "ye"> 
+  SO<sub>4</sub>&nbsp;<sup>2-</sup>
+</li>
+<li class = "card" type = "yf">
+  SO<sub>3</sub>&nbsp;<sup>2-</sup>
+</li>
+<li class = "card" type = "yg"> 
+  SCN<sup>-</sup>
+</li>
+<li class = "card" type = "yh"> 
+  S<sub>2</sub>O<sub>3</sub>&nbsp;<sup>2-</sup>
+</li>
+<li class = "card" id = "ab">
+  ammonium
+</li>
+<li class = "card" type = "b"> 
+  acetate
+</li>
+<li class = "card" type = "c"> 
+  arsenate 
+</li>
+<li class = "card" type = "e"> 
+  azide
+</li>
+<li class = "card" type = "g"> 
+  borate
+</li>
+<li class = "card" type = "h"> 
+  bromate
+</li>
+<li class = "card" type = "ha"> 
+citrate
+</li>
+<li class = "card" type = "j"> 
+  carbonate
+</li>
+<li class = "card" type = "k"> 
+  chlorate
+</li>
+<li class = "card" type = "l"> 
+  chlorite
+</li>
+<li class = "card" type = "m"> 
+  chromate
+</li>
+<li class = "card" type = "n"> 
+  cyanate
+</li>
+<li class = "card" type = "o"> 
+  cyanide
+</li>
+<li class = "card" type = "cz"> 
+ dimercury
+</li>
+<li class = "card" type = "p"> 
+  dichromate
+</li>
+<li class = "card" type = "q"> 
+  hydrogen carbonate
+</li>
+<li class = "card" type = "r"> 
+  hydrogen sulfate
+</li>
+<li class = "card" type = "ra"> 
+  hydronium
+</li>
+<li class = "card" type = "s"> 
+  hydroxide
+</li>
+<li class = "card" type = "t"> 
+  hypochlorite
+</li>
+<li class = "card" type = "u"> 
+  iodate
+</li>
+<li class = "card" type = "v"> 
+  nitrate
+</li>
+<li class = "card" type = "w"> 
+  nitrite
+</li>
+<li class = "card" type = "x"> 
+  oxalate
+</li>
+<li class = "card" type = "y"> 
+  perchlorate
+</li>
+<li class = "card" type = "ya"> 
+  periodate
+</li>
+<li class = "card" type = "yb"> 
+  permanganate
+</li>
+<li class = "card" type = "yc"> 
+  peroxide
+</li>
+<li class = "card" type = "yd"> 
+  phosphate
+</li>
+<li class = "card" type = "ye"> 
+  sulfate
+</li>
+<li class = "card" type = "yf"> 
+  sulfite
+</li>
+<li class = "card" type = "yg"> 
+  thiocyanate
+</li>
+<li class = "card" type = "yh"> 
+  thiosulfate
+</ul>
+
+<div id="popup1" class="overlay">
+<div class="popup">
+  <h1>NICE</h1>
+<a class="close" href=# >X</a>
+  <div class="content-1">
+      <p>you made <span id=finalMove> </span> moves </p>
+      <p>in <span id=totalTime> </span> </p>
+      <p>rating:  <span id=starRating></span></p>
+  </div>
+  <button id="play-again"onclick="playAgain()">
+      play again </a>
+  </button>
+  </div>
+  </div>
+  <script src="script.js"></script>
+  </body>
+</html>
